@@ -1,6 +1,5 @@
 #!/bin/bash
 
 echo "configuring"
-./config1
-./config2
+./config1 && ./config2
 
