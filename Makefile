@@ -1,6 +1,5 @@
 all: 
-	./configuring
-	./compiling
+	make -f Makefile1
 
 test:
 	./test1

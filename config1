@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "config 1 return false"
-false
+true
