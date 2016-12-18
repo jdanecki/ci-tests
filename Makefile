@@ -1,7 +1,9 @@
 all: 
-	true
+	./compiling
 
 test:
-	false
+	./test1
+	./test2
+
 
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "compiling stuff"
+gcc -o c c.c
+
+
