@@ -1,6 +1,7 @@
 all:
 	if [ "$${TRAVIS}" = "true" ] ; then echo "travis_fold:start:configuring" ; fi
 	./configuring
+	if [ "$$?" != "0" ] ;then echo "configuring failed" ; false ; fi
 	if [ "$${TRAVIS}" = "true" ] ; then echo "travis_fold:end:configuring" ; fi
 	if [ "$${TRAVIS}" = "true" ] ; then echo "travis_fold:start:compiling" ; fi
 	./compiling
