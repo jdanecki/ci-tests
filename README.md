@@ -3,4 +3,5 @@ Repo to tests CI:
 * Travis
 * Codeship
 * CircleCI
-
+* Shippable
+* SemaphoreCI
