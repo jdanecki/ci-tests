@@ -1,2 +1,5 @@
 # ci-tests
-Repo to tests CI
+Repo to tests CI:
+* Travis
+
+
