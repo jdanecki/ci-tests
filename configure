@@ -1,6 +1,20 @@
 #!/bin/bash
 
 echo "configure"
-set
+lsb_release -a
 
+wget --version
+curl --version
+gcc --version
+g++ --version
+echo "PKG_CONFIG: `pkg-config --version`"
+
+NR_CPUS=`cat /proc/cpuinfo | grep processor | wc -l`
+echo "NR_CPUS=${NR_CPUS}"
+free
+df -h
+set
+whoami
+
+echo "HOME=$HOME"
 
