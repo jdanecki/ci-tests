@@ -5,5 +5,6 @@ test:
 	./test1
 	./test2
 
-
+check:
+	./compiling
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "compiling stuff"
-gcc -o c c.c
+echo "compiling threads"
+gcc -o threads threads.c -lpthread
 
 
