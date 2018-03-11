@@ -11,6 +11,7 @@ gcc --version
 g++ --version
 clang --version
 
+
 echo "PKG_CONFIG: `pkg-config --version`"
 
 NR_CPUS=`cat /proc/cpuinfo | grep processor | wc -l`
@@ -19,6 +20,7 @@ free
 df -h
 set
 whoami
+sudo whoami
 
 echo "HOME=$HOME"
 
