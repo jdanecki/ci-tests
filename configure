@@ -19,8 +19,28 @@ echo "NR_CPUS=${NR_CPUS}"
 free
 df -h
 set
-whoami
-sudo whoami
-
 echo "HOME=$HOME"
+whoami
+
+if [ "${SHIPPABLE}" = "true" ]
+then
+	if [ "`id -u`" = "0" ]
+	then
+		echo "Shippable has root already"
+	else
+		echo "Shippable has NOT root anymore"
+	fi
+	exit 0
+fi
+
+if [ "${CIRCLECI}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
+then
+	sudo whoami
+fi
+
+if [ "${CODESHIP}" = "TRUE" ]
+then
+	echo "Codeship has not root access"
+fi
+
 
