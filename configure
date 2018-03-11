@@ -36,6 +36,8 @@ fi
 if [ "${CIRCLECI}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 then
 	sudo whoami
+	pwd
+	sudo ./test_sudo par1
 fi
 
 if [ "${CODESHIP}" = "TRUE" ]

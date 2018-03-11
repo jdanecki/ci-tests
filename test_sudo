@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "running test_sudo as `whoami` with par=$1"
+pwd
+
+
