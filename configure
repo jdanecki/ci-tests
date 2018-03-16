@@ -10,7 +10,6 @@ curl --version
 gcc --version
 g++ --version
 clang --version
-docker info
 
 echo "PKG_CONFIG: `pkg-config --version`"
 
@@ -30,6 +29,8 @@ then
 	else
 		echo "Shippable has NOT root anymore"
 	fi
+	docker info
+	docker pull kanapi/kanapi-cli
 	exit 0
 fi
 
@@ -38,11 +39,15 @@ then
 	sudo whoami
 	pwd
 	sudo ./test_sudo par1
+	if [ "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
+	then
+		docker info
+		docker pull kanapi/kanapi-cli
+	fi
 fi
 
 if [ "${CODESHIP}" = "TRUE" ]
 then
 	echo "Codeship has not root access"
 fi
-
 
