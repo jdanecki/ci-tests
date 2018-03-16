@@ -10,7 +10,7 @@ curl --version
 gcc --version
 g++ --version
 clang --version
-
+docker info
 
 echo "PKG_CONFIG: `pkg-config --version`"
 
