@@ -31,6 +31,7 @@ then
 	fi
 	docker info
 	docker pull kanapi/kanapi-cli
+	./update_cli_docker
 	exit 0
 fi
 
@@ -43,6 +44,7 @@ then
 	then
 		docker info
 		docker pull kanapi/kanapi-cli
+		./update_cli_docker
 	fi
 fi
 
