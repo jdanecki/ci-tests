@@ -30,6 +30,9 @@ then
 		echo "Shippable has NOT root anymore"
 	fi
 	docker info
+	docker images
+	docker ps
+	docker ps -a
 	docker pull kanapi/kanapi-cli
 	./update_cli_docker
 	exit 0
@@ -43,6 +46,9 @@ then
 	if [ "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 	then
 		docker info
+		docker images
+		docker ps
+		docker ps -a
 		docker pull kanapi/kanapi-cli
 		./update_cli_docker
 	fi
