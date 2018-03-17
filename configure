@@ -33,7 +33,7 @@ then
 	docker images
 	docker ps
 	docker ps -a
-	docker rm `docker ps -a --filter ancestor=kanapi-cli:latest -q`
+	docker rm `docker ps -a --filter ancestor=kanapi/kanapi-cli:latest -q`
 	docker pull kanapi/kanapi-cli
 	./update_cli_docker
 	exit 0
