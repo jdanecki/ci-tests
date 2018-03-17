@@ -1,5 +1,6 @@
 all: 
-	make -f Makefile1
+	./run_cli_docker
+#	make -f Makefile1
 
 test:
 	./test1
