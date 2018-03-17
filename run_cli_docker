@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 ID=`docker ps -a --filter "name=kanapi-cli" -q`
 docker start ${ID}
 docker exec ${ID} /configure
