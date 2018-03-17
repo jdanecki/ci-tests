@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=`docker ps -a --filter "name=kanapi-cli" -q`
-docker start -i -a ${ID}
+docker start ${ID}
 docker exec ${ID} /configure
 docker exec -e PKG_COMMAND=t_gui ${ID} /_start_install 
 docker stop ${ID}
