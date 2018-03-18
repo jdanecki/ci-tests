@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -x
+
+if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
+then
+	ln -svf Makefile-docker Makefile
+else
+	ln -svf Makefile-codeship Makefile
+fi
+
+ls -l Makefile
+
+set
+
