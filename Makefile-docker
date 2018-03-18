@@ -1,4 +1,5 @@
-all: sbs_build bbs_build
+all: bbs_build 
+	#sbs_build bbs_build
 
 sbs_build:
 	cd sbs; ./build ; cd ..
