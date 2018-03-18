@@ -1,10 +1,10 @@
 all: sbs_build bbs_build
 
 sbs_build:
-	pushd sbs; ./build ; popd
+	cd sbs; ./build ; cd ..
 
 bbs_build:
-	pushd bbs; ./build ; popd
+	cd bbs; ./build ; cd ..
 
 test:
 	docker ps -a
