@@ -2,10 +2,10 @@ all: bbs_build
 	#sbs_build bbs_build
 
 sbs_build:
-	cd sbs; ./build ; cd ..
+	cd sbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
 
 bbs_build:
-	cd bbs; ./build ; cd ..
+	cd bbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
 
 test:
 	docker ps -a

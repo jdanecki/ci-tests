@@ -5,6 +5,8 @@ set -x
 if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 then
 	ln -svf Makefile-docker Makefile
+	docker ps -a
+	docker images
 else
 	ln -svf Makefile-codeship Makefile
 fi
