@@ -11,5 +11,5 @@ fi
 
 ls -l Makefile
 
-set
+#set
 

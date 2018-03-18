@@ -1,11 +1,12 @@
-all: sbs_build
+all: sbs_build bbs_build
 
 sbs_build:
-	cd sbs; ./build
+	pushd sbs; ./build ; popd
 
 bbs_build:
-	cd bbs; ./build
+	pushd bbs; ./build ; popd
 
 test:
-	echo "tbd"
-    
+	docker ps -a
+	docker images
+
