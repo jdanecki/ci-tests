@@ -1,5 +1,5 @@
 all: 
-	if [ "${CODESHIP}" = "TRUE" -o "${CIRCLECI}" = "true" -o ] ; then make -f Makefile1 ; else ./run_docker ; done
+	if [ "${CODESHIP}" = "TRUE" -o "${CIRCLECI}" = "true" -o ] ; then make -f Makefile1 ; else ./run_docker ; fi
 
 test:
 	echo "tests disabled"
