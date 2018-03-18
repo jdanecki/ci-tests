@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+APP_FOR_TEST=ccache
+
+ID=`docker ps -a --filter "name=kanapi-sbs" -q`
+docker start ${ID}
+docker exec ${ID} /configure
+if [ "${TRAVIS}" = "true" ]
+then
+	docker exec -e TRAVIS="true" -e PKG_COMMAND="${APP_FOR_TEST}" ${ID} /_start_install 
+else
+	docker exec -e PKG_COMMAND="${APP_FOR_TEST}" ${ID} /_start_install 
+fi
+
+docker stop ${ID}
+

@@ -10,6 +10,8 @@ curl --version
 gcc --version
 g++ --version
 clang --version
+sort --version
+sed --version
 
 echo "PKG_CONFIG: `pkg-config --version`"
 
@@ -33,9 +35,9 @@ then
 	docker images
 	docker ps
 	docker ps -a
-	docker rm `docker ps -a --filter ancestor=kanapi/kanapi-cli:latest -q`
-	docker pull kanapi/kanapi-cli
-	./update_cli_docker
+	docker rm `docker ps -a --filter ancestor=kanapi/kanapi-sbs:latest -q`
+	docker pull kanapi/kanapi-sbs
+	./update_docker
 	docker exec --help
 	exit 0
 fi
@@ -51,8 +53,8 @@ then
 		docker images
 		docker ps
 		docker ps -a
-		docker pull kanapi/kanapi-cli
-		./update_cli_docker
+		docker pull kanapi/kanapi-sbs
+		./update_docker
 	fi
 fi
 

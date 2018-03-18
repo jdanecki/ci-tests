@@ -1,10 +1,9 @@
 all: 
-	./run_cli_docker
-#	make -f Makefile1
+	if [ "${CODESHIP}" = "TRUE" -o "${CIRCLECI}" = "true" -o ] ; then make -f Makefile1 ; else ./run_docker ; done
 
 test:
-	./test1
-	./test2
+	echo "tests disabled"
+	#./test1 && ./test2
 
 check:
 	./compiling
