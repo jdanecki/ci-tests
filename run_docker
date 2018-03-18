@@ -8,7 +8,12 @@ docker start ${ID}
 docker exec ${ID} /configure
 if [ "${TRAVIS}" = "true" ]
 then
-	docker exec -e TRAVIS="true" -e PKG_COMMAND="${APP_FOR_TEST}" ${ID} /_start_install 
+	if [ "${SHIPPABLE}" = "true" ]
+	then
+		docker exec ${ID} /_start_bbs_build
+	else
+		docker exec -e TRAVIS="true" -e PKG_COMMAND="${APP_FOR_TEST}" ${ID} /_start_install 
+	fi
 else
 	docker exec -e PKG_COMMAND="${APP_FOR_TEST}" ${ID} /_start_install 
 fi
