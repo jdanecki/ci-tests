@@ -1,3 +1,6 @@
 all:
-	echo "test1"
+	echo "all"
+
+test:
+	echo "test"
 

@@ -1,8 +1,11 @@
-all: sbs
+all: sbs_build
 
-sbs:
+sbs_build:
 	cd sbs; ./build
 
-bbs:
+bbs_build:
 	cd bbs; ./build
 
+test:
+	echo "tbd"
+    
