@@ -44,9 +44,9 @@ fi
 
 if [ "${CIRCLECI}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 then
-	sudo whoami
+#	sudo whoami
 	pwd
-	sudo ./test_sudo par1
+#	sudo ./test_sudo par1
 	if [ "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 	then
 		docker info
@@ -56,10 +56,5 @@ then
 		docker pull kanapi/kanapi-sbs
 		./update_docker
 	fi
-fi
-
-if [ "${CODESHIP}" = "TRUE" ]
-then
-	echo "Codeship has not root access"
 fi
 
