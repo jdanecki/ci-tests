@@ -1,11 +1,9 @@
 #!/bin/bash
 
-. bbs_version
-
 if [ "${SHIPPABLE}" = "true" -o  "${TRAVIS}" = "true" ]
 then
-	docker build -f Dockerfile-travis -t kanapi-bbs:${VER} .
+	docker build -f Dockerfile-travis -t kanapi-bbs:ci --no-cache .
 else
-	docker build -t kanapi-bbs:${VER} .
+	docker build -t kanapi-bbs:ci --no-cache .
 fi
 
