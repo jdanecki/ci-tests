@@ -2,7 +2,7 @@
 
 set -x
 
-if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true"]
+if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" ]
 then
 	ln -svf Makefile-docker Makefile
 	docker ps -a
