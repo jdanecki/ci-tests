@@ -1,6 +1,10 @@
 #!/bin/bash
 
 set -x
+ln -svf Makefile-without-docker Makefile
+
+exit 0
+
 
 if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" ]
 then
