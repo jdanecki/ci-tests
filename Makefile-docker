@@ -1,5 +1,4 @@
 all: bbs_build 
-	#sbs_build bbs_build
 
 sbs_build:
 	cd sbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi

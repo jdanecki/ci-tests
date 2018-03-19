@@ -2,15 +2,6 @@
 
 . bbs_version
 
-if [ ! -d kanapi ] 
-then 
-	git clone https://github.com/jdanecki/kanapi.git kanapi 
-else
-	pushd kanapi
-	git pull
-	popd
-fi
-
 if [ "${SHIPPABLE}" = "true" -o  "${TRAVIS}" = "true" ]
 then
 	docker build -f Dockerfile-travis -t kanapi-bbs:${VER} .
