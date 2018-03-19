@@ -1,7 +1,7 @@
 all:
-	@echo "travis_fold:start: phase1" ; fi
+	@echo "travis_fold:start:phase1" ; fi
 	echo "running phase1"
-	@echo "travis_fold:end: phase1" ; fi
+	@echo "travis_fold:end:phase1" ; fi
 
 test:
 	echo "test"
