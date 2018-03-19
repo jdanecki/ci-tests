@@ -8,8 +8,8 @@ build:
         - false
         - make test
     post_ci:
-        - echo \"post ci\"
+        - echo 'post ci'
     on_success:
-        - echo \"success build\"
+        - echo 'success build'
     on_failure:
-        - echo \"failure build\"
+        - echo 'failure build'
