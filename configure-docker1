@@ -1,0 +1,60 @@
+#!/bin/bash
+
+set -x
+
+echo "configure"
+lsb_release -a
+
+wget --version
+curl --version
+gcc --version
+g++ --version
+clang --version
+sort --version
+sed --version
+
+echo "PKG_CONFIG: `pkg-config --version`"
+
+NR_CPUS=`cat /proc/cpuinfo | grep processor | wc -l`
+echo "NR_CPUS=${NR_CPUS}"
+free
+df -h
+set
+echo "HOME=$HOME"
+whoami
+
+if [ "${SHIPPABLE}" = "true" ]
+then
+	if [ "`id -u`" = "0" ]
+	then
+		echo "Shippable has root already"
+	else
+		echo "Shippable has NOT root anymore"
+	fi
+	docker info
+	docker images
+	docker ps
+	docker ps -a
+	docker rm `docker ps -a --filter ancestor=kanapi/kanapi-sbs:latest -q`
+	docker pull kanapi/kanapi-sbs
+	./update_docker
+	docker exec --help
+	exit 0
+fi
+
+if [ "${CIRCLECI}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
+then
+#	sudo whoami
+	pwd
+#	sudo ./test_sudo par1
+	if [ "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
+	then
+		docker info
+		docker images
+		docker ps
+		docker ps -a
+		docker pull kanapi/kanapi-sbs
+		./update_docker
+	fi
+fi
+

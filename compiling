@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "compiling threads"
-gcc -o threads threads.c -lpthread -lrt
-
+echo "compiling with `nproc` threads "
+gcc -j`nproc` -o threads threads.c -lpthread -lrt
 

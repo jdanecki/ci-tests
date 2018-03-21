@@ -1,12 +1,8 @@
 #!/bin/bash
 
 set -x
-ln -svf Makefile-without-docker Makefile
 
-exit 0
-
-
-if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" ]
+if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 then
 	ln -svf Makefile-docker Makefile
 	docker ps -a
