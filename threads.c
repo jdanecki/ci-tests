@@ -23,6 +23,7 @@ along with KaNaPi.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #include <sys/syscall.h> 
 #include <sys/sysinfo.h>
+#include <stdlib.h>
 
 struct thread_data {
 	pthread_t tid;
@@ -70,9 +71,9 @@ int main(int argc, char **argv)
 		sta = tp1.tv_sec * 1000000000 + tp1.tv_nsec;
 		sto = tp2.tv_sec * 1000000000 + tp2.tv_nsec;
 		delta = sto - sta;
-		if (delta > 10000000000 ) finish = 1;
+		if (delta > 10000000000) finish = 1;
 	}
-	printf("delta: %4lu %u ms\n", delta / 1000000);
+	printf("delta: %4lu %u ms\n", delta, delta / 1000000);
 
 	for (i = 0; i < th; i++) {
    		pthread_join(threads_data[i].tid, NULL);
