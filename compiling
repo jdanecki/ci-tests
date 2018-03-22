@@ -3,3 +3,7 @@
 echo "compiling threads "
 gcc -o threads threads.c -lpthread -lrt
 
+echo "compiling memory "
+gcc -o memory memory.c
+
+
