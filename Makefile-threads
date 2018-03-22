@@ -3,6 +3,7 @@ all:
 
 test:
 	./test1
+	./memory
 
 memtest:
 	gcc -o memory memory.c
