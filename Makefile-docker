@@ -1,10 +1,13 @@
-all: bbs_build 
+all: llvm_build 
 
 sbs_build:
 	cd sbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
 
 bbs_build:
 	cd bbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
+
+llvm_build:
+	cd llvm; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
 
 test:
 	docker ps -a
