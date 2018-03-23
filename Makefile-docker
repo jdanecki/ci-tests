@@ -1,4 +1,4 @@
-all: llvm_build 
+all: x11_build
 
 sbs_build:
 	cd sbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
@@ -8,6 +8,9 @@ bbs_build:
 
 llvm_build:
 	cd llvm; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
+
+x11_build:
+	cd x11; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi
 
 test:
 	docker ps -a
