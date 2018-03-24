@@ -2,7 +2,7 @@ language: c
 compiler:
   - gcc
 sudo: required
-
 services:
   - docker
+install: travis_wait date
 
