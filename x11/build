@@ -1,4 +1,9 @@
 #!/bin/bash
 
-docker build -m 4g -t kanapi-x11:ci .
+if [ "${SHIPPABLE}" = "true" -o  "${TRAVIS}" = "true" ]
+then
+	docker build -f Dockerfile-travis -t kanapi-x11:ci .
+else
+	docker build -m 4g -t kanapi-x11:ci .
+fi
 
