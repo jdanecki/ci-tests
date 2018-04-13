@@ -1,4 +1,4 @@
-all: x11_build
+all: sbs_build
 
 sbs_build:
 	cd sbs; ./build ; if [ "$$?" = "0" ] ; then cd .. ; else false; fi

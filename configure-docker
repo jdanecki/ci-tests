@@ -1,14 +1,11 @@
 #!/bin/bash
 
 set -x
+pwd
 
 if [ "${SHIPPABLE}" = "true" -o "${SEMAPHORE}" = "true" -o "${TRAVIS}" = "true" ]
 then
 	ln -svf Makefile-docker Makefile
-	docker ps -a
-	docker images
-	git clone https://github.com/jdanecki/kanapi.git x11/kanapi
-#	cd bbs/kanapi; git show ; cd ../..
 else
 	ln -svf Makefile-without-docker Makefile
 fi
