@@ -9,15 +9,15 @@ install: travis_wait date
 matrix:
     include:
         - env: "job1"
-          script: 
-            - echo "1 command"
+          script:
+            - ./configure
             - echo "2 command"
         - env: "job2"
-          script: 
-            - echo "1 command" && echo "2 command"
+          script:
+            - ./configure
         - env: "job3"
-          script: 
+          script:
             - echo "1 command" ; echo "2 command"
         - env: "job4"
-          script: 
+          script:
             - set
