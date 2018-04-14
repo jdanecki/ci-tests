@@ -10,15 +10,15 @@ matrix:
     include:
         - env: "job1"
           script: 
-            - ./compiling
+            - pwd; ls -l ; ./compiling
         - env: "job2"
           script: 
-            - ./compiling
+            - pwd; ls -l ;./compiling
         - env: "job3"
           script: 
-            - ./compiling
+            - sleep 30; pwd; ls -l ; ./compiling
         - env: "job4"
           script: 
-            - ./compiling
+            - pwd; set; ./compiling
 
 
