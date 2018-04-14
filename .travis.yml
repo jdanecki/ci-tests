@@ -6,3 +6,19 @@ services:
   - docker
 install: travis_wait date
 
+matrix:
+    include:
+        - env: "job1"
+          script: 
+            - ./compiling
+        - env: "job2"
+          script: 
+            - ./compiling
+        - env: "job3"
+          script: 
+            - ./compiling
+        - env: "job4"
+          script: 
+            - ./compiling
+
+
