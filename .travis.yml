@@ -10,13 +10,14 @@ matrix:
     include:
         - env: "job1"
           script: 
-            - set
+            - echo "1 command"
+            - echo "2 command"
         - env: "job2"
           script: 
-            - set
+            - echo "1 command" && echo "2 command"
         - env: "job3"
           script: 
-            - set
+            - echo "1 command" ; echo "2 command"
         - env: "job4"
           script: 
             - set
