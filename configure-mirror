@@ -1,0 +1,7 @@
+#bin/bash
+
+set -x
+wget http://84.38.102.146/~adanecki/kanapi/mirror/qt-everywhere-opensource-src-5.7.1.tar.xz
+wget https://downloads.sourceforge.net/project/kanapi/sources/Packages/mirror/qt-everywhere-opensource-src-5.7.1.tar.xz
+
+

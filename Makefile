@@ -1,1 +1,1 @@
-Makefile-threads
+Makefile-dummy
